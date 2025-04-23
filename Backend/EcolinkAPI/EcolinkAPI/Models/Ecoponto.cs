@@ -14,7 +14,7 @@
         public string? Descricao { get; set; }
         public DateTime CriadoEm { get; set; } = DateTime.UtcNow;
         public int UsuarioId { get; set; }
-        public Usuario Usuario { get; set; } = null!;
+        public UsuarioModel Usuario { get; set; } = null!;
         public ICollection<EcopontoMaterial> EcopontoMateriais { get; set; } = new List<EcopontoMaterial>();
     }
 }

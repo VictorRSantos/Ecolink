@@ -8,7 +8,7 @@ namespace EcolinkAPI.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
 
-        public DbSet<Usuario> Usuarios => Set<Usuario>();
+        public DbSet<UsuarioModel> Usuarios => Set<UsuarioModel>();
         public DbSet<Ecoponto> Ecopontos => Set<Ecoponto>();
         public DbSet<Material> Materiais => Set<Material>();
         public DbSet<EcopontoMaterial> EcopontoMateriais => Set<EcopontoMaterial>();
@@ -18,11 +18,11 @@ namespace EcolinkAPI.Data
             base.OnModelCreating(modelBuilder);
 
             // Configuração de Usuario
-            modelBuilder.Entity<Usuario>()
+            modelBuilder.Entity<UsuarioModel>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
-            modelBuilder.Entity<Usuario>()
+            modelBuilder.Entity<UsuarioModel>()
                 .HasIndex(u => u.Cnpj)
                 .IsUnique();
 
